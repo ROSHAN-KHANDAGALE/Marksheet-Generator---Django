@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marksheet</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>
+        <a href="/"><i class="bi bi-house-door-fill"></i></a>
+      </h1>
+      <h1 class="text-center">
+        Rashtrasant Tukadoji Maharaj Nagpur University
+      </h1>
+      <br />
+      <h2 class="text-center">Marksheet Diploma</h2>
+      <table class="table table-bordered mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th>Examination</th>
+            <th>Center</th>
+            <th>Semester & Branch</th>
+            <th>Name of Student</th>
+            <th>Registration Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ marksContext.examination }}</td>
+            <td>{{ marksContext.center }}</td>
+            <td>{{ marksContext.semBranch }}</td>
+            <td>{{ marksContext.name }}</td>
+            <td>{{ marksContext.registrationNo }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Subject</th>
+            <th>Theory</th>
+            <th>Internal</th>
+            <th>Total</th>
+            <th>Theory</th>
+            <th>Internals</th>
+            <th>Obtained Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Computer Application</td>
+            <td>{{theory}}</td>
+            <td>{{ia}}</td>
+            <td>{{engineering_drawing}}</td>
+            <td>{{ dataContext.computer }}</td>
+            <td>{{ dataContext.internal_Computer }}</td>
+            <td>{{ dataContext.subTotalComputer }}</td>
+          </tr>
+          <tr>
+            <td>Engineering Physics</td>
+            <td>{{theory}}</td>
+            <td>{{ia}}</td>
+            <td>{{engineering_drawing}}</td>
+            <td>{{ dataContext.physics }}</td>
+            <td>{{ dataContext.internal_Physics }}</td>
+            <td>{{ dataContext.subTotalPhysics }}</td>
+          </tr>
+          <tr>
+            <td>Basic Mathematics - I</td>
+            <td>{{theory}}</td>
+            <td>{{ia}}</td>
+            <td>{{engineering_drawing}}</td>
+            <td>{{ dataContext.mathematics }}</td>
+            <td>{{ dataContext.internal_Maths }}</td>
+            <td>{{ dataContext.subTotalMathematics }}</td>
+          </tr>
+          <tr>
+            <td>Electrical & Electronics</td>
+            <td>{{theory}}</td>
+            <td>{{ia}}</td>
+            <td>{{engineering_drawing}}</td>
+            <td>{{ dataContext.electrical_Electronics }}</td>
+            <td>{{ dataContext.internal_Elect_Electronics }}</td>
+            <td>{{ dataContext.subTotalElectrical }}</td>
+          </tr>
+          <tr>
+            <td>Practical Physics</td>
+            <td>{{physics_Practical}}</td>
+            <td>-</td>
+            <td>{{engineering_drawing}}</td>
+            <td>{{ dataContext.practical_Physics }}</td>
+            <td>-</td>
+            <td>{{ dataContext.practical_Physics }}</td>
+          </tr>
+          <tr>
+            <td>Engineering Drawing</td>
+            <td>{{engineering_drawing}}</td>
+            <td>-</td>
+            <td>{{engineering_drawing}}</td>
+            <td>{{ dataContext.practical_Eng }}</td>
+            <td>-</td>
+            <td>{{ dataContext.practical_Eng }}</td>
+          </tr>
+          <tr>
+            <td>Sessional</td>
+            <td>200</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{dataContext.sessional}}</td>
+            <td>-</td>
+            <td>{{dataContext.sessional}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Total Marks Obtained</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ dataContext.total }} / 700</td>
+            <td style="color: green; font-weight: bold">
+              {{ dataContext.result }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5" style="background-color: lightblue">
+      <h1>
+        <a href="/"><i class="bi bi-house-door-fill"></i></a>
+      </h1>
+      <h1 class="text-center" style="font-weight: bold">
+        Rashtrasant Tukadoji Maharaj Nagpur University
+      </h1>
+      <h2 class="text-center" style="color: teal; font-weight: bold">
+        Student Marksheet Generator
+      </h2>
+      <h3>Enter User Details</h3>
+      <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="examination">Examination:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="examination"
+              placeholder="Enter Examination Name"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="center">Center:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="center"
+              placeholder="Enter Center Name"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="semBranch">Semester & Branch:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="semBranch"
+              placeholder="Enter Semester and Branch"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="name">Name of Student:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="Enter Student Name"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="registrationNo">Registration Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="registrationNo"
+              placeholder="Enter Registration Number"
+              required
+            />
+          </div>
+        </div>
+        <h3>Enter Marks</h3>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="computer">Computer Application:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="computer"
+              min="0"
+              max="80"
+              placeholder="Enter Computer Application Marks"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="internal_Computer"
+              >Computer Application Internals:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="internal_Computer"
+              min="0"
+              max="20"
+              placeholder="Enter Internals for Computer Application"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="physics">Engineering Physics:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="physics"
+              min="0"
+              max="80"
+              placeholder="Enter Engineering Physics Marks"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="internal_Physics">Engineering Physics Internals:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="internal_Physics"
+              min="0"
+              max="20"
+              placeholder="Enter Internals for Engineering Physics"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="mathematics">Basic Mathematics - I:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="mathematics"
+              min="0"
+              max="80"
+              placeholder="Enter Basic Mathematics Marks"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="internal_Maths">Basic Mathematics - I Internals:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="internal_Maths"
+              min="0"
+              max="20"
+              placeholder="Enter Internals for Basic Mathematics"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="electrical_Electronics"
+              >Electrical & Electronics:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="electrical_Electronics"
+              min="0"
+              max="80"
+              placeholder="Enter Electrical & Electronics Marks"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="internal_Elect_Electronics"
+              >Electrical & Electronics Internals:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="internal_Elect_Electronics"
+              min="0"
+              max="20"
+              placeholder="Enter Internals for Electrical & Electronics"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="practical_Physics">Practical Physics:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="practical_Physics"
+              min="0"
+              max="50"
+              placeholder="Enter Practical Physics Marks"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="practical_Eng">Engineering Drawing:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="practical_Eng"
+              min="0"
+              max="100"
+              placeholder="Enter Practical Engineering Drawing Marks"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="sessional">Sessional:</label>
+            <input
+              type="number"
+              class="form-control"
+              name="sessional"
+              min="0"
+              max="200"
+              placeholder="Enter Sessional Marks"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href=""><button class="btn btn-danger">Reset</button></a>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

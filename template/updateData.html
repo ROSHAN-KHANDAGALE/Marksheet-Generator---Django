@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <title>Updating Record</title>
+  </head>
+  <body>
+    <div class="container mt-5" style="background-color: lightblue">
+      <h1>
+        <a href="/"><i class="bi bi-house-door-fill"></i></a>
+      </h1>
+      <h1 class="text-center" style="font-weight: bold">
+        Rashtrasant Tukadoji Maharaj Nagpur University
+      </h1>
+      <h2 class="text-center" style="color: teal; font-weight: bold">
+        Student Marksheet Generator
+      </h2>
+      <h3>Enter User Details</h3>
+      <form method="post" action="{% url 'update_record' records.id %}">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="examination">Examination:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="examination"
+              value="{{records.examination}}"
+              placeholder="Enter Examination Name"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="center">Center:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="center"
+              value="{{records.center}}"
+              placeholder="Enter Center Name"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="semBranch">Semester & Branch:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="semBranch"
+              value="{{records.semBranch}}"
+              placeholder="Enter Semester and Branch"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="name">Name of Student:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              value="{{records.name}}"
+              placeholder="Enter Student Name"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="registrationNo">Registration Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="registrationNo"
+              value="{{records.registrationNo}}"
+              placeholder="Enter Registration Number"
+              required
+            />
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn-warning">Update Data</button>
+        </div>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
